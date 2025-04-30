@@ -3,51 +3,51 @@
 @tailwind utilities;
 
 :root {
-  /* Light theme - Brahma mode (Creator/Light) */
-  --background: 210 40% 98%;
-  --foreground: 222 47% 11%;
-  --muted: 210 20% 94%;
-  --muted-foreground: 215 25% 40%;
-  --popover: 210 40% 98%;
-  --popover-foreground: 222 47% 11%;
-  --card: 210 40% 98%;
-  --card-foreground: 222 47% 11%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --primary: 215 90% 50%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 225 57% 60%;
-  --secondary-foreground: 210 40% 98%;
-  --accent: 48 96% 53%;
-  --accent-foreground: 222 47% 11%;
+  /* Light theme - Modern UI */
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --muted: 240 5% 96%;
+  --muted-foreground: 240 4% 46%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --border: 240 6% 90%;
+  --input: 240 6% 90%;
+  --primary: 262 83% 58%; /* Purple as primary instead of blue */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 5% 96%;
+  --secondary-foreground: 240 6% 10%;
+  --accent: 143 72% 29%; /* Green accent */
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
-  --ring: 215 90% 50%;
-  --radius: 0.5rem;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 262 83% 58%;
+  --radius: 0.75rem;
 }
 
 .dark {
-  /* Dark theme - Shiva mode (Destroyer/Dark) */
-  --background: 222 47% 5%;
-  --foreground: 210 40% 98%;
-  --muted: 222 47% 12%;
-  --muted-foreground: 215 25% 65%;
-  --popover: 222 47% 5%;
-  --popover-foreground: 210 40% 98%;
-  --card: 222 47% 7%;
-  --card-foreground: 210 40% 98%;
-  --border: 222 47% 12%;
-  --input: 222 47% 12%;
-  --primary: 215 90% 50%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 284 70% 50%;
-  --secondary-foreground: 210 40% 98%; 
-  --accent: 48 96% 53%;
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 70% 50%;
-  --destructive-foreground: 210 40% 98%;
-  --ring: 215 90% 50%;
-  --radius: 0.5rem;
+  /* Dark theme - Modern Dark UI */
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 4% 16%;
+  --muted-foreground: 240 5% 65%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 6%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 4% 16%;
+  --input: 240 4% 16%;
+  --primary: 262 73% 50%; /* Purple primary */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4% 16%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 164 70% 40%; /* Teal accent */
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 262 73% 50%;
+  --radius: 0.75rem;
 }
 
 @layer base {
@@ -66,29 +66,29 @@
 
 /* TrimurtiSec Special Elements */
 @layer components {
-  /* Brahma Mode - Creation/Reconnaissance - Blue */
+  /* Brahma Mode - Creation/Reconnaissance - Purple Tones */
   .brahma-gradient {
-    @apply bg-gradient-to-br from-blue-600 to-blue-400;
-  }
-  
-  /* Vishnu Mode - Preservation/Persistence - Purple */
-  .vishnu-gradient {
     @apply bg-gradient-to-br from-purple-700 to-purple-500;
   }
   
-  /* Shiva Mode - Destruction - Red */
-  .shiva-gradient {
-    @apply bg-gradient-to-br from-red-700 to-red-500;
+  /* Vishnu Mode - Preservation/Persistence - Teal/Green Tones */
+  .vishnu-gradient {
+    @apply bg-gradient-to-br from-teal-600 to-teal-400;
   }
   
-  /* God Mode - Full Control - Gold */
+  /* Shiva Mode - Destruction - Deep Pink/Red tones */
+  .shiva-gradient {
+    @apply bg-gradient-to-br from-pink-700 to-pink-500;
+  }
+  
+  /* God Mode - Full Control - Gold/Black */
   .god-gradient {
-    @apply bg-gradient-to-br from-amber-500 to-yellow-300;
+    @apply bg-gradient-to-br from-amber-400 to-amber-200;
   }
   
   /* Tool cards with hover effect */
   .tool-card {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 rounded-xl overflow-hidden;
   }
   
   /* Special buttons with glow effect */
@@ -107,23 +107,36 @@
   
   /* Category Gradients for Tool Cards */
   .gradient-recon {
-    @apply bg-gradient-to-br from-blue-600/90 to-blue-500/90 text-white;
+    @apply bg-gradient-to-br from-purple-700/90 to-purple-500/90 text-white;
   }
   
   .gradient-vuln {
-    @apply bg-gradient-to-br from-purple-600/90 to-purple-500/90 text-white;
+    @apply bg-gradient-to-br from-teal-600/90 to-teal-400/90 text-white;
   }
   
   .gradient-web {
-    @apply bg-gradient-to-br from-indigo-600/90 to-indigo-500/90 text-white;
+    @apply bg-gradient-to-br from-fuchsia-600/90 to-fuchsia-500/90 text-white;
   }
   
   .gradient-network {
-    @apply bg-gradient-to-br from-cyan-600/90 to-cyan-500/90 text-white;
+    @apply bg-gradient-to-br from-indigo-700/90 to-indigo-500/90 text-white;
   }
   
   .gradient-system {
-    @apply bg-gradient-to-br from-teal-600/90 to-teal-500/90 text-white;
+    @apply bg-gradient-to-br from-amber-600/90 to-amber-400/90 text-white;
+  }
+  
+  /* Modern UI Elements */
+  .glass-panel {
+    @apply backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10;
+  }
+  
+  .modern-card {
+    @apply bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-gray-800/20 border border-gray-100 dark:border-gray-800;
+  }
+  
+  .modern-button {
+    @apply rounded-lg px-4 py-2 bg-primary text-white transition-all hover:bg-primary/90 active:scale-95;
   }
 }
 
