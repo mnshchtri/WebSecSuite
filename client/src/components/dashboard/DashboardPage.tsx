@@ -63,10 +63,14 @@ export default function DashboardPage() {
                 </div>
               </div>
               
-              {/* Information Gathering Tools */}
+              {/* Information Gathering Tools - Brahma Mode */}
               {groupedTools["Information Gathering"].length > 0 && (
                 <>
-                  <h4 className="text-md font-medium text-neutral-light mb-3">Information Gathering</h4>
+                  <div className="brahma-gradient rounded-lg px-4 py-2 mb-4 flex items-center gap-3">
+                    <h4 className="text-md font-semibold text-white">Brahma Mode</h4>
+                    <div className="w-px h-5 bg-white bg-opacity-30"></div>
+                    <span className="text-sm text-white text-opacity-80">Information Gathering & Reconnaissance</span>
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                     {groupedTools["Information Gathering"].map(tool => (
                       <ToolCard key={tool.id} tool={tool} />
@@ -75,10 +79,14 @@ export default function DashboardPage() {
                 </>
               )}
               
-              {/* Vulnerability Analysis Tools */}
+              {/* Vulnerability Analysis Tools - Vishnu Mode */}
               {groupedTools["Vulnerability Analysis"].length > 0 && (
                 <>
-                  <h4 className="text-md font-medium text-neutral-light mb-3">Vulnerability Analysis</h4>
+                  <div className="vishnu-gradient rounded-lg px-4 py-2 mb-4 flex items-center gap-3">
+                    <h4 className="text-md font-semibold text-white">Vishnu Mode</h4>
+                    <div className="w-px h-5 bg-white bg-opacity-30"></div>
+                    <span className="text-sm text-white text-opacity-80">Vulnerability Analysis & Preservation</span>
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                     {groupedTools["Vulnerability Analysis"].map(tool => (
                       <ToolCard key={tool.id} tool={tool} />
@@ -87,10 +95,14 @@ export default function DashboardPage() {
                 </>
               )}
               
-              {/* Web Application Security Tools */}
+              {/* Web Application Security Tools - Shiva Mode */}
               {groupedTools["Web Application Security"].length > 0 && (
                 <>
-                  <h4 className="text-md font-medium text-neutral-light mb-3">Web Application Security</h4>
+                  <div className="shiva-gradient rounded-lg px-4 py-2 mb-4 flex items-center gap-3">
+                    <h4 className="text-md font-semibold text-white">Shiva Mode</h4>
+                    <div className="w-px h-5 bg-white bg-opacity-30"></div>
+                    <span className="text-sm text-white text-opacity-80">Web Security & Exploitation</span>
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                     {groupedTools["Web Application Security"].map(tool => (
                       <ToolCard key={tool.id} tool={tool} />
@@ -99,10 +111,14 @@ export default function DashboardPage() {
                 </>
               )}
               
-              {/* Network Security Tools */}
+              {/* Network Security Tools - Trinity Balance */}
               {groupedTools["Network Security"].length > 0 && (
                 <>
-                  <h4 className="text-md font-medium text-neutral-light mb-3">Network Security</h4>
+                  <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 rounded-lg px-4 py-2 mb-4 flex items-center gap-3">
+                    <h4 className="text-md font-semibold text-white">Trinity Balance</h4>
+                    <div className="w-px h-5 bg-white bg-opacity-30"></div>
+                    <span className="text-sm text-white text-opacity-80">Network Security & Management</span>
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                     {groupedTools["Network Security"].map(tool => (
                       <ToolCard key={tool.id} tool={tool} />
@@ -111,10 +127,14 @@ export default function DashboardPage() {
                 </>
               )}
               
-              {/* System Tools */}
+              {/* System Tools - God Mode */}
               {groupedTools["System Tools"].length > 0 && (
                 <>
-                  <h4 className="text-md font-medium text-neutral-light mb-3">System Tools</h4>
+                  <div className="god-gradient rounded-lg px-4 py-2 mb-4 flex items-center gap-3">
+                    <h4 className="text-md font-semibold text-stone-800">God Mode</h4>
+                    <div className="w-px h-5 bg-stone-800 bg-opacity-30"></div>
+                    <span className="text-sm text-stone-800 text-opacity-80">Complete System Control</span>
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {groupedTools["System Tools"].map(tool => (
                       <ToolCard key={tool.id} tool={tool} />
