@@ -19,11 +19,11 @@ export default function Sidebar() {
 
   return (
     <div className="hidden md:flex md:flex-shrink-0">
-      <div className="flex flex-col w-64 border-r border-primary-light">
+      <div className="flex flex-col w-64 border-r border-primary-light dark:glass-panel">
         {/* Logo */}
-        <div className="flex items-center justify-center h-16 px-4 bg-primary-light">
+        <div className="flex items-center justify-center h-16 px-4 bg-gradient-to-r from-purple-700 to-fuchsia-700">
           <h1 className="text-xl font-semibold text-white flex items-center">
-            <svg className="h-6 w-6 mr-2 text-accent-green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="h-6 w-6 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               <circle cx="12" cy="11" r="1" />
               <path d="M12 11v3" />
@@ -40,8 +40,8 @@ export default function Sidebar() {
               className={cn(
                 "flex items-center px-2 py-2 text-sm font-medium rounded-md",
                 isActive("/") 
-                  ? "text-white bg-primary-light" 
-                  : "text-neutral-light hover:text-white hover:bg-primary-light"
+                  ? "text-white bg-primary" 
+                  : "text-neutral-light hover:text-white hover:bg-primary/80"
               )}
             >
               <DashboardIcon className="mr-3 text-lg" />
@@ -59,8 +59,8 @@ export default function Sidebar() {
                   className={cn(
                     "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                     isActive("/tool/nmap") || isActive("/tool/dnslookup") || isActive("/tool/whois") 
-                      ? "text-white bg-primary-light" 
-                      : "text-neutral-light hover:text-white hover:bg-primary-light"
+                      ? "text-white bg-primary" 
+                      : "text-neutral-light hover:text-white hover:bg-primary/80"
                   )}
                 >
                   <ReconnaissanceIcon className="mr-3 text-lg" />
@@ -79,8 +79,8 @@ export default function Sidebar() {
                   className={cn(
                     "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                     isActive("/tool/sslscan") || isActive("/tool/nikto") || isActive("/tool/dirb") 
-                      ? "text-white bg-primary-light" 
-                      : "text-neutral-light hover:text-white hover:bg-primary-light"
+                      ? "text-white bg-primary" 
+                      : "text-neutral-light hover:text-white hover:bg-primary/80"
                   )}
                 >
                   <ScanningIcon className="mr-3 text-lg" />
@@ -99,8 +99,8 @@ export default function Sidebar() {
                   className={cn(
                     "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                     isActive("/tool/sqlmap") || isActive("/tool/xss") 
-                      ? "text-white bg-primary-light" 
-                      : "text-neutral-light hover:text-white hover:bg-primary-light"
+                      ? "text-white bg-primary" 
+                      : "text-neutral-light hover:text-white hover:bg-primary/80"
                   )}
                 >
                   <WebToolsIcon className="mr-3 text-lg" />
@@ -119,8 +119,8 @@ export default function Sidebar() {
                   className={cn(
                     "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                     isActive("/tool/packetanalyzer") || isActive("/tool/macchanger") 
-                      ? "text-white bg-primary-light" 
-                      : "text-neutral-light hover:text-white hover:bg-primary-light"
+                      ? "text-white bg-primary" 
+                      : "text-neutral-light hover:text-white hover:bg-primary/80"
                   )}
                 >
                   <NetworkToolsIcon className="mr-3 text-lg" />
@@ -139,8 +139,8 @@ export default function Sidebar() {
                   className={cn(
                     "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                     isActive("/tool/hashcracker") || isActive("/tool/firewallmanager") 
-                      ? "text-white bg-primary-light" 
-                      : "text-neutral-light hover:text-white hover:bg-primary-light"
+                      ? "text-white bg-primary" 
+                      : "text-neutral-light hover:text-white hover:bg-primary/80"
                   )}
                 >
                   <SystemUtilsIcon className="mr-3 text-lg" />
