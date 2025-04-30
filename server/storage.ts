@@ -51,18 +51,21 @@ export class MemStorage implements IStorage {
     this.activitiesData = [
       {
         id: this.currentActivityId++,
+        userId: 1, // Default user ID
         type: "success",
         message: "Port scan completed on 192.168.1.0/24",
         timestamp: new Date(Date.now() - 10 * 60000)
       },
       {
         id: this.currentActivityId++,
+        userId: 1, // Default user ID
         type: "warning",
         message: "Directory enumeration detected weak permissions",
         timestamp: new Date(Date.now() - 34 * 60000)
       },
       {
         id: this.currentActivityId++,
+        userId: 1, // Default user ID
         type: "error",
         message: "SQL injection vulnerability found in web application",
         timestamp: new Date(Date.now() - 120 * 60000)
