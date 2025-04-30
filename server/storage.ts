@@ -1,4 +1,6 @@
 import { users, type User, type InsertUser, stats, activities, type Activity, type InsertActivity, scanResults, type ScanResult, type InsertScanResult } from "@shared/schema";
+import { db } from "./db";
+import { eq, desc } from "drizzle-orm";
 
 export interface IStorage {
   // User operations
@@ -147,4 +149,111 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+export class DatabaseStorage implements IStorage {
+  private defaultUserId = 1; // Temporary default user ID until we have proper auth
+
+  // User methods
+  async getUser(id: number): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
+    return user;
+  }
+
+  // Stats methods
+  async getStats(): Promise<any> {
+    const [statsData] = await db.select().from(stats).limit(1);
+    
+    // If no stats exist yet, create default stats
+    if (!statsData) {
+      const defaultStats = {
+        activeScans: 2,
+        systemsSecured: 18,
+        vulnerabilities: 42,
+        criticalIssues: 5
+      };
+      
+      const [newStats] = await db.insert(stats).values(defaultStats).returning();
+      return newStats;
+    }
+    
+    return statsData;
+  }
+
+  async updateStats(newStats: any): Promise<any> {
+    const [existingStats] = await db.select().from(stats).limit(1);
+    
+    if (existingStats) {
+      const [updatedStats] = await db
+        .update(stats)
+        .set(newStats)
+        .where(eq(stats.id, existingStats.id))
+        .returning();
+      return updatedStats;
+    } else {
+      const [newStats] = await db.insert(stats).values(newStats).returning();
+      return newStats;
+    }
+  }
+
+  // Activity methods
+  async getActivities(limit: number = 10): Promise<Activity[]> {
+    return await db.select().from(activities).limit(limit).orderBy(desc(activities.timestamp));
+  }
+
+  async createActivity(activity: InsertActivity): Promise<Activity> {
+    // Set default user ID if none provided
+    const activityWithUser = {
+      ...activity,
+      userId: activity.userId || this.defaultUserId
+    };
+    
+    const [newActivity] = await db
+      .insert(activities)
+      .values(activityWithUser)
+      .returning();
+    return newActivity;
+  }
+
+  // Scan results methods
+  async getScanResult(id: number): Promise<ScanResult | undefined> {
+    const [result] = await db.select().from(scanResults).where(eq(scanResults.id, id));
+    return result || undefined;
+  }
+
+  async getScanResultsByTool(toolId: string): Promise<ScanResult[]> {
+    return await db
+      .select()
+      .from(scanResults)
+      .where(eq(scanResults.toolId, toolId))
+      .orderBy(desc(scanResults.timestamp));
+  }
+
+  async createScanResult(result: InsertScanResult): Promise<ScanResult> {
+    // Set default user ID if none provided
+    const resultWithUser = {
+      ...result,
+      userId: result.userId || this.defaultUserId
+    };
+    
+    const [newScanResult] = await db
+      .insert(scanResults)
+      .values(resultWithUser)
+      .returning();
+    return newScanResult;
+  }
+}
+
+// Use DatabaseStorage instead of MemStorage
+export const storage = new DatabaseStorage();
