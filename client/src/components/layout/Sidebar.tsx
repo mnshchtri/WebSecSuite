@@ -35,16 +35,17 @@ export default function Sidebar() {
         {/* Navigation */}
         <div className="flex flex-col flex-grow px-4 py-5 overflow-y-auto">
           <div className="space-y-1">
-            <Link href="/">
-              <a className={cn(
+            <Link 
+              href="/"
+              className={cn(
                 "flex items-center px-2 py-2 text-sm font-medium rounded-md",
                 isActive("/") 
                   ? "text-white bg-primary-light" 
                   : "text-neutral-light hover:text-white hover:bg-primary-light"
-              )}>
-                <DashboardIcon className="mr-3 text-lg" />
-                Dashboard
-              </a>
+              )}
+            >
+              <DashboardIcon className="mr-3 text-lg" />
+              Dashboard
             </Link>
 
             {/* Tool Categories */}
@@ -53,16 +54,17 @@ export default function Sidebar() {
                 Information Gathering
               </h3>
               <div className="mt-2 space-y-1">
-                <Link href="/tool/nmap">
-                  <a className={cn(
+                <Link 
+                  href="/tool/nmap"
+                  className={cn(
                     "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                     isActive("/tool/nmap") || isActive("/tool/dnslookup") || isActive("/tool/whois") 
                       ? "text-white bg-primary-light" 
                       : "text-neutral-light hover:text-white hover:bg-primary-light"
-                  )}>
-                    <ReconnaissanceIcon className="mr-3 text-lg" />
-                    Reconnaissance
-                  </a>
+                  )}
+                >
+                  <ReconnaissanceIcon className="mr-3 text-lg" />
+                  Reconnaissance
                 </Link>
               </div>
             </div>
@@ -72,16 +74,17 @@ export default function Sidebar() {
                 Vulnerability Analysis
               </h3>
               <div className="mt-2 space-y-1">
-                <Link href="/tool/sslscan">
-                  <a className={cn(
+                <Link 
+                  href="/tool/sslscan"
+                  className={cn(
                     "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                     isActive("/tool/sslscan") || isActive("/tool/nikto") || isActive("/tool/dirb") 
                       ? "text-white bg-primary-light" 
                       : "text-neutral-light hover:text-white hover:bg-primary-light"
-                  )}>
-                    <ScanningIcon className="mr-3 text-lg" />
-                    Scanning
-                  </a>
+                  )}
+                >
+                  <ScanningIcon className="mr-3 text-lg" />
+                  Scanning
                 </Link>
               </div>
             </div>
@@ -91,16 +94,17 @@ export default function Sidebar() {
                 Web Application Security
               </h3>
               <div className="mt-2 space-y-1">
-                <Link href="/tool/sqlmap">
-                  <a className={cn(
+                <Link 
+                  href="/tool/sqlmap"
+                  className={cn(
                     "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                     isActive("/tool/sqlmap") || isActive("/tool/xss") 
                       ? "text-white bg-primary-light" 
                       : "text-neutral-light hover:text-white hover:bg-primary-light"
-                  )}>
-                    <WebToolsIcon className="mr-3 text-lg" />
-                    Web Tools
-                  </a>
+                  )}
+                >
+                  <WebToolsIcon className="mr-3 text-lg" />
+                  Web Tools
                 </Link>
               </div>
             </div>
@@ -110,16 +114,17 @@ export default function Sidebar() {
                 Network Security
               </h3>
               <div className="mt-2 space-y-1">
-                <Link href="/tool/packetanalyzer">
-                  <a className={cn(
+                <Link 
+                  href="/tool/packetanalyzer"
+                  className={cn(
                     "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                     isActive("/tool/packetanalyzer") || isActive("/tool/macchanger") 
                       ? "text-white bg-primary-light" 
                       : "text-neutral-light hover:text-white hover:bg-primary-light"
-                  )}>
-                    <NetworkToolsIcon className="mr-3 text-lg" />
-                    Network Tools
-                  </a>
+                  )}
+                >
+                  <NetworkToolsIcon className="mr-3 text-lg" />
+                  Network Tools
                 </Link>
               </div>
             </div>
@@ -129,16 +134,17 @@ export default function Sidebar() {
                 System Tools
               </h3>
               <div className="mt-2 space-y-1">
-                <Link href="/tool/hashcracker">
-                  <a className={cn(
+                <Link 
+                  href="/tool/hashcracker"
+                  className={cn(
                     "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                     isActive("/tool/hashcracker") || isActive("/tool/firewallmanager") 
                       ? "text-white bg-primary-light" 
                       : "text-neutral-light hover:text-white hover:bg-primary-light"
-                  )}>
-                    <SystemUtilsIcon className="mr-3 text-lg" />
-                    System Utilities
-                  </a>
+                  )}
+                >
+                  <SystemUtilsIcon className="mr-3 text-lg" />
+                  System Utilities
                 </Link>
               </div>
             </div>

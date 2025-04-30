@@ -46,50 +46,70 @@ export default function StatsCards() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-      <Card className="bg-primary-light rounded-lg p-4 shadow-lg">
-        <div className="flex items-center">
-          <div className="p-3 rounded-full bg-accent-blue bg-opacity-10 text-accent-blue">
-            <RadarIcon className="h-5 w-5" />
-          </div>
-          <div className="ml-3">
-            <p className="text-sm font-medium text-neutral">Active Scans</p>
-            <p className="text-xl font-semibold">{displayStats.activeScans}</p>
-          </div>
-        </div>
-      </Card>
-
-      <Card className="bg-primary-light rounded-lg p-4 shadow-lg">
-        <div className="flex items-center">
-          <div className="p-3 rounded-full bg-accent-green bg-opacity-10 text-accent-green">
-            <ShieldCheckIcon className="h-5 w-5" />
-          </div>
-          <div className="ml-3">
-            <p className="text-sm font-medium text-neutral">Systems Secured</p>
-            <p className="text-xl font-semibold">{displayStats.systemsSecured}</p>
+      {/* Brahma Card - Information/Reconnaissance (Blue theme) */}
+      <Card className="bg-primary-light overflow-hidden rounded-lg shadow-lg">
+        <div className="h-1 brahma-gradient"></div>
+        <div className="p-4">
+          <div className="flex items-center">
+            <div className="p-3 rounded-full brahma-gradient text-white">
+              <RadarIcon className="h-5 w-5" />
+            </div>
+            <div className="ml-3">
+              <p className="text-sm font-medium text-neutral">Active Scans</p>
+              <p className="text-xl font-semibold">{displayStats.activeScans}</p>
+              <p className="text-xs text-neutral-light mt-1">Brahma Mode</p>
+            </div>
           </div>
         </div>
       </Card>
 
-      <Card className="bg-primary-light rounded-lg p-4 shadow-lg">
-        <div className="flex items-center">
-          <div className="p-3 rounded-full bg-amber-500 bg-opacity-10 text-amber-500">
-            <AlertTriangleIcon className="h-5 w-5" />
-          </div>
-          <div className="ml-3">
-            <p className="text-sm font-medium text-neutral">Vulnerabilities</p>
-            <p className="text-xl font-semibold">{displayStats.vulnerabilities}</p>
+      {/* Vishnu Card - Preservation/Maintenance (Green theme) */}
+      <Card className="bg-primary-light overflow-hidden rounded-lg shadow-lg">
+        <div className="h-1 vishnu-gradient"></div>
+        <div className="p-4">
+          <div className="flex items-center">
+            <div className="p-3 rounded-full vishnu-gradient text-white">
+              <ShieldCheckIcon className="h-5 w-5" />
+            </div>
+            <div className="ml-3">
+              <p className="text-sm font-medium text-neutral">Systems Secured</p>
+              <p className="text-xl font-semibold">{displayStats.systemsSecured}</p>
+              <p className="text-xs text-neutral-light mt-1">Vishnu Mode</p>
+            </div>
           </div>
         </div>
       </Card>
 
-      <Card className="bg-primary-light rounded-lg p-4 shadow-lg">
-        <div className="flex items-center">
-          <div className="p-3 rounded-full bg-red-500 bg-opacity-10 text-red-500">
-            <AlertOctagonIcon className="h-5 w-5" />
+      {/* Trinity Balance Card - Network Management (Mixed theme) */}
+      <Card className="bg-primary-light overflow-hidden rounded-lg shadow-lg">
+        <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-red-500"></div>
+        <div className="p-4">
+          <div className="flex items-center">
+            <div className="p-3 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 text-white">
+              <AlertTriangleIcon className="h-5 w-5" />
+            </div>
+            <div className="ml-3">
+              <p className="text-sm font-medium text-neutral">Vulnerabilities</p>
+              <p className="text-xl font-semibold">{displayStats.vulnerabilities}</p>
+              <p className="text-xs text-neutral-light mt-1">Trinity Balance</p>
+            </div>
           </div>
-          <div className="ml-3">
-            <p className="text-sm font-medium text-neutral">Critical Issues</p>
-            <p className="text-xl font-semibold">{displayStats.criticalIssues}</p>
+        </div>
+      </Card>
+
+      {/* Shiva Card - Destruction/Exploitation (Red theme) */}
+      <Card className="bg-primary-light overflow-hidden rounded-lg shadow-lg">
+        <div className="h-1 shiva-gradient"></div>
+        <div className="p-4">
+          <div className="flex items-center">
+            <div className="p-3 rounded-full shiva-gradient text-white">
+              <AlertOctagonIcon className="h-5 w-5" />
+            </div>
+            <div className="ml-3">
+              <p className="text-sm font-medium text-neutral">Critical Issues</p>
+              <p className="text-xl font-semibold">{displayStats.criticalIssues}</p>
+              <p className="text-xs text-neutral-light mt-1">Shiva Mode</p>
+            </div>
           </div>
         </div>
       </Card>

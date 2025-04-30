@@ -53,16 +53,18 @@ export default function SidebarMobile() {
             {/* Navigation */}
             <div className="flex flex-col flex-grow px-4 py-5 overflow-y-auto">
               <div className="space-y-1">
-                <Link href="/">
-                  <a onClick={closeSidebar} className={cn(
+                <Link 
+                  href="/"
+                  onClick={closeSidebar}
+                  className={cn(
                     "flex items-center px-2 py-2 text-sm font-medium rounded-md",
                     isActive("/") 
                       ? "text-white bg-primary-light" 
                       : "text-neutral-light hover:text-white hover:bg-primary-light"
-                  )}>
-                    <DashboardIcon className="mr-3 text-lg" />
-                    Dashboard
-                  </a>
+                  )}
+                >
+                  <DashboardIcon className="mr-3 text-lg" />
+                  Dashboard
                 </Link>
 
                 {/* Tool Categories */}
@@ -71,16 +73,18 @@ export default function SidebarMobile() {
                     Information Gathering
                   </h3>
                   <div className="mt-2 space-y-1">
-                    <Link href="/tool/nmap">
-                      <a onClick={closeSidebar} className={cn(
+                    <Link 
+                      href="/tool/nmap"
+                      onClick={closeSidebar}
+                      className={cn(
                         "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                         isActive("/tool/nmap") || isActive("/tool/dnslookup") || isActive("/tool/whois") 
                           ? "text-white bg-primary-light" 
                           : "text-neutral-light hover:text-white hover:bg-primary-light"
-                      )}>
-                        <ReconnaissanceIcon className="mr-3 text-lg" />
-                        Reconnaissance
-                      </a>
+                      )}
+                    >
+                      <ReconnaissanceIcon className="mr-3 text-lg" />
+                      Reconnaissance
                     </Link>
                   </div>
                 </div>
@@ -90,16 +94,18 @@ export default function SidebarMobile() {
                     Vulnerability Analysis
                   </h3>
                   <div className="mt-2 space-y-1">
-                    <Link href="/tool/sslscan">
-                      <a onClick={closeSidebar} className={cn(
+                    <Link 
+                      href="/tool/sslscan"
+                      onClick={closeSidebar}
+                      className={cn(
                         "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                         isActive("/tool/sslscan") || isActive("/tool/nikto") || isActive("/tool/dirb") 
                           ? "text-white bg-primary-light" 
                           : "text-neutral-light hover:text-white hover:bg-primary-light"
-                      )}>
-                        <ScanningIcon className="mr-3 text-lg" />
-                        Scanning
-                      </a>
+                      )}
+                    >
+                      <ScanningIcon className="mr-3 text-lg" />
+                      Scanning
                     </Link>
                   </div>
                 </div>
@@ -109,16 +115,18 @@ export default function SidebarMobile() {
                     Web Application Security
                   </h3>
                   <div className="mt-2 space-y-1">
-                    <Link href="/tool/sqlmap">
-                      <a onClick={closeSidebar} className={cn(
+                    <Link 
+                      href="/tool/sqlmap"
+                      onClick={closeSidebar}
+                      className={cn(
                         "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                         isActive("/tool/sqlmap") || isActive("/tool/xss") 
                           ? "text-white bg-primary-light" 
                           : "text-neutral-light hover:text-white hover:bg-primary-light"
-                      )}>
-                        <WebToolsIcon className="mr-3 text-lg" />
-                        Web Tools
-                      </a>
+                      )}
+                    >
+                      <WebToolsIcon className="mr-3 text-lg" />
+                      Web Tools
                     </Link>
                   </div>
                 </div>
@@ -128,16 +136,18 @@ export default function SidebarMobile() {
                     Network Security
                   </h3>
                   <div className="mt-2 space-y-1">
-                    <Link href="/tool/packetanalyzer">
-                      <a onClick={closeSidebar} className={cn(
+                    <Link 
+                      href="/tool/packetanalyzer"
+                      onClick={closeSidebar}
+                      className={cn(
                         "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                         isActive("/tool/packetanalyzer") || isActive("/tool/macchanger") 
                           ? "text-white bg-primary-light" 
                           : "text-neutral-light hover:text-white hover:bg-primary-light"
-                      )}>
-                        <NetworkToolsIcon className="mr-3 text-lg" />
-                        Network Tools
-                      </a>
+                      )}
+                    >
+                      <NetworkToolsIcon className="mr-3 text-lg" />
+                      Network Tools
                     </Link>
                   </div>
                 </div>
@@ -147,16 +157,18 @@ export default function SidebarMobile() {
                     System Tools
                   </h3>
                   <div className="mt-2 space-y-1">
-                    <Link href="/tool/hashcracker">
-                      <a onClick={closeSidebar} className={cn(
+                    <Link 
+                      href="/tool/hashcracker"
+                      onClick={closeSidebar}
+                      className={cn(
                         "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                         isActive("/tool/hashcracker") || isActive("/tool/firewallmanager") 
                           ? "text-white bg-primary-light" 
                           : "text-neutral-light hover:text-white hover:bg-primary-light"
-                      )}>
-                        <SystemUtilsIcon className="mr-3 text-lg" />
-                        System Utilities
-                      </a>
+                      )}
+                    >
+                      <SystemUtilsIcon className="mr-3 text-lg" />
+                      System Utilities
                     </Link>
                   </div>
                 </div>
@@ -169,15 +181,16 @@ export default function SidebarMobile() {
         </SheetContent>
       </Sheet>
       
-      <Link href="/">
-        <a className="text-xl font-semibold text-white flex items-center">
-          <svg className="h-6 w-6 mr-2 text-accent-green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            <circle cx="12" cy="11" r="1" />
-            <path d="M12 11v3" />
-          </svg>
-          TrimurtiSec
-        </a>
+      <Link 
+        href="/"
+        className="text-xl font-semibold text-white flex items-center"
+      >
+        <svg className="h-6 w-6 mr-2 text-accent-green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <circle cx="12" cy="11" r="1" />
+          <path d="M12 11v3" />
+        </svg>
+        TrimurtiSec
       </Link>
       
       <button className="text-neutral hover:text-white">
