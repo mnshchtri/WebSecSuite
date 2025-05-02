@@ -2,6 +2,7 @@
 
 A modern web security testing and analysis suite built with TypeScript, React, and Express.
 
+![TrimurtiSec Cover](./cover.png)
 ## Features
 
 - Modern web interface built with Next.js and Material-UI
