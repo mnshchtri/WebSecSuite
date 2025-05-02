@@ -62,7 +62,7 @@ export default function ToolPage() {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden bg-primary text-white">
+    <div className="flex h-screen overflow-hidden bg-background text-foreground">
       <Sidebar />
       
       <div className="flex flex-col flex-1 overflow-hidden">

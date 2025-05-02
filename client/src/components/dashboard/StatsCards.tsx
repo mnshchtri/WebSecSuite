@@ -8,24 +8,31 @@ import {
   AlertOctagonIcon 
 } from "lucide-react";
 
+type Stats = {
+  activeScans: number;
+  systemsSecured: number;
+  vulnerabilities: number;
+  criticalIssues: number;
+};
+
 export default function StatsCards() {
-  const { data: stats, isLoading } = useQuery({
+  const { data: stats, isLoading } = useQuery<Stats>({
     queryKey: ['/api/stats'],
     retry: false,
   });
 
   if (isLoading) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {Array(4).fill(null).map((_, i) => (
-          <Card key={i} className="bg-primary-light p-4 shadow-lg">
+          <Card key={i} className="bg-background p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl">
             <div className="flex items-center">
-              <div className="p-3 rounded-full bg-accent-blue bg-opacity-10">
-                <Skeleton className="h-6 w-6 rounded-full" />
+              <div className="p-4 rounded-full bg-primary/10">
+                <Skeleton className="h-8 w-8 rounded-full" />
               </div>
-              <div className="ml-3">
-                <Skeleton className="h-4 w-24 mb-2" />
-                <Skeleton className="h-6 w-8" />
+              <div className="ml-4">
+                <Skeleton className="h-5 w-32 mb-3" />
+                <Skeleton className="h-8 w-12" />
               </div>
             </div>
           </Card>
@@ -45,9 +52,9 @@ export default function StatsCards() {
   const displayStats = stats || defaultStats;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
       {/* Brahma Card - Information/Reconnaissance (Blue theme) */}
-      <Card className="bg-primary-light overflow-hidden rounded-lg shadow-lg">
+      <Card className="bg-background overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
         <div className="h-1 brahma-gradient"></div>
         <div className="p-4">
           <div className="flex items-center">

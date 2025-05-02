@@ -44,8 +44,8 @@ export default function ToolResults({
   });
 
   return (
-    <Card className="bg-primary-light rounded-lg shadow-lg overflow-hidden">
-      <CardHeader className="flex flex-row items-center justify-between px-4 py-3 border-b border-primary">
+    <Card className="bg-black/40 rounded-lg shadow-lg overflow-hidden border border-emerald-500/20">
+      <CardHeader className="flex flex-row items-center justify-between px-4 py-3 border-b border-emerald-900/30 bg-black/30">
         <CardTitle className="text-md font-semibold">Scan Results</CardTitle>
         <div className="flex items-center">
           {isLoading && (

@@ -15,7 +15,7 @@ export default function ToolInterface({ tool, children }: ToolInterfaceProps) {
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center">
           <Link href="/">
-            <Button variant="ghost" size="icon" className="mr-3 text-neutral-light hover:text-white">
+            <Button variant="ghost" size="icon" className="mr-3 text-emerald-400/70 hover:text-emerald-400 hover:bg-black/40">
               <ArrowLeft className="h-5 w-5" />
             </Button>
           </Link>
@@ -24,7 +24,7 @@ export default function ToolInterface({ tool, children }: ToolInterfaceProps) {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button variant="outline" size="sm" className="text-neutral-light border-neutral hover:text-white">
+              <Button variant="outline" size="sm" className="text-emerald-400/70 border-emerald-500/30 hover:bg-black/40 hover:text-emerald-400 hover:border-emerald-500/50">
                 <HelpCircle className="h-4 w-4 mr-1" />
                 Help
               </Button>

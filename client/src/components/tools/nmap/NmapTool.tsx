@@ -67,29 +67,29 @@ export default function NmapTool() {
 
   const renderPortsTable = () => {
     if (!results || !results.ports) {
-      return <div className="text-center text-neutral">No port details available</div>;
+      return <div className="text-center text-emerald-400/60">No port details available</div>;
     }
 
     return (
       <div className="overflow-x-auto">
         <table className="min-w-full">
           <thead>
-            <tr className="text-xs text-neutral-light uppercase tracking-wider text-left">
+            <tr className="text-xs text-emerald-400/80 uppercase tracking-wider text-left">
               <th className="py-2 px-3">Port</th>
               <th className="py-2 px-3">State</th>
               <th className="py-2 px-3">Service</th>
               <th className="py-2 px-3">Version</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-primary">
+          <tbody className="divide-y divide-emerald-900/30">
             {results.ports.map((port: any, index: number) => (
-              <tr key={index} className="hover:bg-primary">
+              <tr key={index} className="hover:bg-emerald-900/20 transition-colors duration-150">
                 <td className="py-3 px-3">{port.port}/{port.protocol}</td>
                 <td className="py-3 px-3">
-                  <span className={`text-xs bg-opacity-20 py-1 px-2 rounded-full ${
-                    port.state === 'open' ? 'bg-accent-green text-accent-green' : 
-                    port.state === 'filtered' ? 'bg-yellow-500 text-yellow-500' : 
-                    'bg-red-500 text-red-500'
+                  <span className={`text-xs py-1 px-2 rounded-full ${
+                    port.state === 'open' ? 'bg-emerald-900/30 text-emerald-400 border border-emerald-500/30' : 
+                    port.state === 'filtered' ? 'bg-amber-900/30 text-amber-300 border border-amber-500/30' : 
+                    'bg-red-900/30 text-red-400 border border-red-500/30'
                   }`}>
                     {port.state}
                   </span>

@@ -14,7 +14,7 @@ import {
   SystemUtilsIcon 
 } from "@/lib/icons";
 import { cn } from "@/lib/utils";
-import UserMenu from "./UserMenu";
+
 
 export default function SidebarMobile() {
   const [open, setOpen] = useState(false);
@@ -175,8 +175,7 @@ export default function SidebarMobile() {
               </div>
             </div>
 
-            {/* User Menu */}
-            <UserMenu />
+
           </div>
         </SheetContent>
       </Sheet>

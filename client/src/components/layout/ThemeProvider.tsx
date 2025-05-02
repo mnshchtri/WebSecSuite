@@ -64,11 +64,12 @@ export function ThemeProvider({
   );
 }
 
-export const useTheme = () => {
+// Using function declaration instead of arrow function for better Hot Module Replacement
+export function useTheme() {
   const context = React.useContext(ThemeProviderContext);
 
   if (context === undefined)
     throw new Error("useTheme must be used within a ThemeProvider");
 
   return context;
-};
+}

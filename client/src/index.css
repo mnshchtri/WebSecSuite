@@ -4,50 +4,71 @@
 
 :root {
   /* Light theme - Modern UI */
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --muted: 240 5% 96%;
-  --muted-foreground: 240 4% 46%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --border: 240 6% 90%;
-  --input: 240 6% 90%;
-  --primary: 262 83% 58%; /* Purple as primary instead of blue */
+  --background: 222 47% 11%;
+  --foreground: 0 0% 88%;
+  --muted: 0 0% 46%;
+  --muted-foreground: 0 0% 78%;
+  --popover: 222 21% 21%;
+  --popover-foreground: 0 0% 88%;
+  --card: 222 21% 21%;
+  --card-foreground: 0 0% 88%;
+  --border: 240 15% 33%;
+  --input: 222 21% 21%;
+  --primary: 291 71% 35%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 240 5% 96%;
-  --secondary-foreground: 240 6% 10%;
-  --accent: 143 72% 29%; /* Green accent */
+  --secondary: 291 73% 31%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 291 57% 40%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --ring: 262 83% 58%;
-  --radius: 0.75rem;
+  --ring: 291 70% 45%;
+  --radius: 0.5rem;
 }
 
 .dark {
   /* Dark theme - Modern Dark UI */
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --muted: 240 4% 16%;
-  --muted-foreground: 240 5% 65%;
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --card: 240 10% 6%;
-  --card-foreground: 0 0% 98%;
-  --border: 240 4% 16%;
-  --input: 240 4% 16%;
-  --primary: 262 73% 50%; /* Purple primary */
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 4% 16%;
-  --secondary-foreground: 0 0% 98%;
-  --accent: 164 70% 40%; /* Teal accent */
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 62% 50%;
-  --destructive-foreground: 0 0% 98%;
-  --ring: 262 73% 50%;
-  --radius: 0.75rem;
+  --background: 222 47% 11%;
+  --foreground: 0 0% 88%;
+  --muted: 0 0% 46%;
+  --muted-foreground: 0 0% 78%;
+  --popover: 222 21% 21%;
+  --popover-foreground: 0 0% 88%;
+  --card: 222 21% 21%;
+  --card-foreground: 0 0% 88%;
+  --border: 240 15% 33%;
+  --input: 222 21% 21%;
+  --primary: 291 71% 35%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 291 73% 31%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 291 57% 40%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 291 70% 45%;
+  --radius: 0.5rem;
+}
+
+/* Custom styles */
+.glass-panel {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-panel {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shiva-gradient {
+  background: linear-gradient(45deg, #4a90e2, #357abd);
+}
+
+.god-gradient {
+  background: linear-gradient(45deg, #ff4757, #ff527b);
 }
 
 @layer base {
@@ -66,9 +87,9 @@
 
 /* TrimurtiSec Special Elements */
 @layer components {
-  /* Brahma Mode - Creation/Reconnaissance - Purple Tones */
+  /* Brahma Mode - Creation/Reconnaissance - Matrix Green Tones */
   .brahma-gradient {
-    @apply bg-gradient-to-br from-purple-700 to-purple-500;
+    @apply bg-gradient-to-br from-emerald-700 to-emerald-500;
   }
   
   /* Vishnu Mode - Preservation/Persistence - Teal/Green Tones */
@@ -76,9 +97,9 @@
     @apply bg-gradient-to-br from-teal-600 to-teal-400;
   }
   
-  /* Shiva Mode - Destruction - Deep Pink/Red tones */
+  /* Shiva Mode - Destruction - Dark cyber tones */
   .shiva-gradient {
-    @apply bg-gradient-to-br from-pink-700 to-pink-500;
+    @apply bg-gradient-to-br from-gray-900 to-gray-800;
   }
   
   /* God Mode - Full Control - Gold/Black */
@@ -139,4 +160,3 @@
     @apply rounded-lg px-4 py-2 bg-primary text-white transition-all hover:bg-primary/90 active:scale-95;
   }
 }
-

@@ -15,17 +15,17 @@ export default function ToolCard({ tool }: ToolCardProps) {
   const getCategoryGradient = () => {
     switch(category) {
       case "Information Gathering":
-        return "gradient-recon";
+        return "from-blue-500 to-blue-700";
       case "Vulnerability Analysis":
-        return "gradient-vuln";
+        return "from-yellow-500 to-yellow-700";
       case "Web Application Security":
-        return "gradient-web";
+        return "from-purple-500 to-purple-700";
       case "Network Security":
-        return "gradient-network"; 
+        return "from-teal-500 to-teal-700";
       case "System Tools":
-        return "gradient-system";
+        return "from-red-500 to-red-700";
       default:
-        return "gradient-recon";
+        return "from-blue-500 to-blue-700";
     }
   };
   
@@ -48,7 +48,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
   };
 
   return (
-    <Card className="tool-card bg-primary-light rounded-lg shadow-lg overflow-hidden">
+    <Card className="tool-card bg-background rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
       <div className={`${getCategoryGradient()} px-4 py-2 flex justify-between items-center`}>
         <h4 className="font-medium text-sm">{name}</h4>
         <span className="text-xs opacity-75">{getTrinityMode()}</span>
